@@ -61,20 +61,24 @@ code {
 }
 
 /* --------------------------------- 2. home page---------------------------------  */
+/* --------------------------------- 2. home page---------------------------------  */
+/* --------------------------------- 2. home page---------------------------------  */
 .homepage {
-  background-image: url("./assets/images/run.jpg");
+  background-image: url("./assets/images/running.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom; /* Aligns the image to show the running person */
   background-repeat: no-repeat;
   height: 100vh; /* 100% of the viewport height */
 }
+
+
 
 .home {
   position: absolute;
   bottom: 12%;
   left: 50%;
   transform: translate(-50%);
-  color: whitesmoke;
+  color: rgb(49, 5, 5);
 }
 
 .home-title {

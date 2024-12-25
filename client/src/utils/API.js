@@ -82,3 +82,27 @@ export const deleteResistance = (resistanceId, token) => {
     }
   })
 }
+
+export const updateCardio = (cardioId, cardioData, token) => {
+  return fetch(`/api/exercise/cardio/${cardioId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(cardioData),
+  });
+};
+
+export const updateResistance = (resistanceId, resistanceData, token) => {
+  return fetch(`/api/exercise/resistance/${resistanceId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(resistanceData),
+  });
+};
+
+

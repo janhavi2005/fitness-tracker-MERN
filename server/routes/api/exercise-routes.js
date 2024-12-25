@@ -3,33 +3,52 @@ const {
   createResistance,
   getResistanceById,
   deleteResistance,
+  updateResistance,  // Import update function for resistance
 } = require("../../controllers/resistance-controller");
 
 const {
   createCardio,
   getCardioById,
   deleteCardio,
+  updateCardio,  // Import update function for cardio
 } = require("../../controllers/cardio-controller");
 
-// import middleware
+// Import middleware
 const { authMiddleware } = require('../../utils/auth');
 
-// on insominia: 
-// choose Auth bearer, add response-body attribute and edit tag
-// change request to the login api
-// change filter to $. to find token
+// Apply authentication middleware to all routes
 router.use(authMiddleware);
 
-// /api/exercise/cardio
-router.route("/cardio").post(createCardio);
+/**
+ * Cardio Routes
+ * Endpoint: /api/exercise/cardio
+ */
+router.route("/cardio")
+  // Create a new cardio exercise
+  .post(createCardio);
 
-// /api/exercise/cardio/:id
-router.route("/cardio/:id").get(getCardioById).delete(deleteCardio);
+router.route("/cardio/:id")
+  // Get a cardio exercise by ID
+  .get(getCardioById)
+  // Update a cardio exercise by ID
+  .put(updateCardio)  // Add PUT method for updating cardio
+  // Delete a cardio exercise by ID
+  .delete(deleteCardio);
 
-// /api/exercise/resistance
-router.route("/resistance").post(createResistance);
+/**
+ * Resistance Routes
+ * Endpoint: /api/exercise/resistance
+ */
+router.route("/resistance")
+  // Create a new resistance exercise
+  .post(createResistance);
 
-// /api/exercise/resistance/:id
-router.route("/resistance/:id").get(getResistanceById).delete(deleteResistance);
+router.route("/resistance/:id")
+  // Get a resistance exercise by ID
+  .get(getResistanceById)
+  // Update a resistance exercise by ID
+  .put(updateResistance)  // Add PUT method for updating resistance
+  // Delete a resistance exercise by ID
+  .delete(deleteResistance);
 
 module.exports = router;
