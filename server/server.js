@@ -1,4 +1,3 @@
-import path from "path";
 const express = require("express");
 const punycode = require('punycode');
 const path = require("path");
