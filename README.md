@@ -46,7 +46,7 @@ npm run develop
 #### Example Screenshot
 
 - Home Page <br>
-  ![Screenshot](./client/src/assets/screenshots/1.png)
+  ![Screenshot](./client/src/assets/images/running.jpg) 
 
 - Login Page <br>
   ![Screenshot](./client/src/assets/screenshots/2.png)
