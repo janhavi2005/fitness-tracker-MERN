@@ -22,7 +22,10 @@ if (process.env.NODE_ENV === "production") {
 // });
 
 app.use(routes);
-app.use(express.static(path.join(_dirname, "/client/dist")))
+app.use(express.static(path.join(_dirname, "/client/dist")));
+app.get('*',(_,res) => {
+  res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"));
+});
 
 db.once("open", () => {
   app.listen(PORT, () => {
